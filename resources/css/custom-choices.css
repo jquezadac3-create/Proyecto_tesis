@@ -1,0 +1,144 @@
+/* Estilos base para Choices */
+.choices__inner {
+  background-color: white;
+  border-radius: 8px; 
+  padding: 8px 10px; 
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  border: 0.5px solid #d1d5db;
+  position: relative;
+}
+
+.choices__inner:hover {
+  border: 1px solid #3b82f6; /* blue-500 */
+}
+
+.choices__list--single {
+  padding: 0; 
+}
+
+.choices__placeholder {
+  opacity: 0.7;
+}
+
+.choices__item {
+  border: 1px solid transparent;
+  margin-top: 6px;
+}
+
+.choices__input--cloned {
+  padding: 5px;
+  border-radius: 4px;
+  background-color: white;
+}
+
+/* Estilos específicos para múltiple selección CON botón de eliminar */
+.choices__list--multiple .choices__item {
+  background-color: #3b82f6; /* blue-500 */
+  border-color: #3b82f6; /* blue-500 */
+  position: relative;
+  padding-right: 24px !important;
+  margin-right: 8px;
+  margin-bottom: 4px;
+}
+
+/* Botón de eliminar */
+.choices__list--multiple .choices__item .choices__button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  opacity: 0.8;
+  margin-left: 8px;
+  padding: 0;
+  display: block !important;
+  visibility: visible !important;
+}
+
+.choices__list--multiple .choices__item .choices__button:hover {
+  opacity: 1;
+  background: none;
+  border: none;
+}
+
+/* Línea separadora */
+.choices[data-type*=select-multiple] .choices__button, 
+.choices[data-type*=text] .choices__button {
+  border-left: 1px solid rgba(255, 255, 255, 0.5) !important;
+  margin-left: 8px;
+  padding-left: 8px;
+}
+
+/* SVG para el botón X */
+.choices__list--multiple .choices__item .choices__button::before {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='white' d='M6 5.293l4.789-4.79.707.707-4.79 4.79 4.79 4.789-.707.707L6 6.707l-4.789 4.79-.707-.707L5.293 6 .504 1.211 1.211.504 6 5.293z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.choices__list--multiple .choices__item .choices__button:hover::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23f0f0f0' d='M6 5.293l4.789-4.79.707.707-4.79 4.79 4.79 4.789-.707.707L6 6.707l-4.789 4.79-.707-.707L5.293 6 .504 1.211 1.211.504 6 5.293z'/%3E%3C/svg%3E");
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  position: absolute;
+  z-index: 9999; 
+}
+
+.choices[data-type*="select-one"].is-disabled .choices__inner {
+  background-color: #ffffff; 
+  border-color: #3b82f6; /* blue-500 */
+}
+
+.choices__list--dropdown .choices__item--disabled {
+  background-color: #f9f9f9;
+  border-color: #3b82f6; /* blue-500 */
+}
+
+.choices-jornadas {
+  position: relative;
+  z-index: 1;
+}
+
+.choices-jornadas .choices__inner {
+  min-height: 44px;
+  padding: 4px 8px;
+  flex-wrap: wrap;
+}
+
+.choices__item[data-deletable] .choices__button {
+  display: block !important;
+  visibility: visible !important;
+}
+
+.choices-jornadas .choices__list--multiple .choices__item {
+  background-color: #3b82f6; /* blue-500 */
+  border-color: #3b82f6; /* blue-500 */
+  color: white;
+  padding-right: 30px !important;
+}
+
+.choices-jornadas .choices__list--multiple .choices__item .choices__button {
+  border-left: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Efecto hover para los items */
+.choices-jornadas .choices__list--multiple .choices__item:hover {
+  background-color: #2563eb; /* blue-600 para hover */
+  border-color: #2563eb;
+}

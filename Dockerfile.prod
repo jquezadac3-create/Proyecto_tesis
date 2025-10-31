@@ -1,0 +1,50 @@
+FROM php:8.2-fpm
+
+ARG USER
+ARG UID
+
+WORKDIR /var/www
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zlib1g-dev \
+    zip \
+    curl \
+    unzip \
+    git \
+    openssl \
+    libzip-dev \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev && \
+    docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip soap
+
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+RUN useradd -G www-data,root -u $UID -d /home/$USER $USER
+RUN mkdir -p /home/$USER/.composer && \
+    chown -R $USER:$USER /home/$USER
+
+COPY --chown=$USER:$USER . /var/www
+
+RUN chown -R $USER:$USER /var/www/storage /var/www/bootstrap/cache
+RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+
+COPY docker/openssl.cnf /etc/ssl/openssl.cnf
+ENV OPENSSL_CONF=/etc/ssl/openssl.cnf
+
+# This is a custom entrypoint script
+# It can be used to run additional commands before starting the PHP-FPM server
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+EXPOSE 9000
+
+USER $USER
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["php-fpm"]
