@@ -29,8 +29,8 @@ Este proyecto está orientado a la gestión de clientes del **Club Barrabas Azog
 
 1. **Clona el repositorio:**
     ```bash
-    git clone https://github.com/jquezadac3-create/Ticket_Fact.git
-    cd Ticket_Fact
+    git clone https://github.com/jquezadac3-create/Proyecto_tesis.git
+    cd Proyecto_tesis
     ```
 
 2. **Instala las dependencias:**
@@ -69,10 +69,10 @@ Este proyecto está orientado a la gestión de clientes del **Club Barrabas Azog
 
     ```bash
     # Con HTTPS
-    git clone https://github.com/jquezadac3-create/Ticket_Fact.git
+    git clone https://github.com/jquezadac3-create/Proyecto_tesis.git
 
     # O con SSH
-    git clone git@github.com:jquezadac3-create/Ticket_Fact.git
+    git clone git@github.com:jquezadac3-create/Proyecto_tesis.git
 
     cd Ticket_Fact
     ```
