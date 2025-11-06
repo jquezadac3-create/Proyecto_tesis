@@ -1,5 +1,4 @@
-# Barrabas Club Azogues
-
+# Proyecto tesis
 Este proyecto está orientado a la gestión de clientes del **Club Barrabas Azogues**, desarrollado con **Laravel** y con integración para **facturación electrónica** conforme a la normativa del SRI (Ecuador).
 
 ---
