@@ -7,7 +7,7 @@ Este proyecto está orientado a la gestión de clientes del **Club Barrabas Azog
 
 - Plataforma web desarrollada en **Laravel 12**
 - Integración con sistemas de **facturación electrónica (SRI)**
-- Enfoque en la gestión, atención y servicios del **Club Barrabas**
+- Enfoque en la gestión, atención y servicios
 - Integraciones externas:
   - **Resend** (envío de correos electrónicos)
   - **PayPhone** (procesamiento de pagos)
