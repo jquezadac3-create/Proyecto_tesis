@@ -74,7 +74,7 @@ Este proyecto está orientado a la gestión de clientes del **Club Barrabas Azog
     # O con SSH
     git clone git@github.com:jquezadac3-create/Proyecto_tesis.git
 
-    cd Ticket_Fact
+    cd Proyecto_tesis
     ```
 
 2. Configuramos el entorno:
